@@ -1,0 +1,15 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: container-linux-label-controller
+  namespace: node-label-controller
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: container-linux-label-controller
+    spec:
+      containers:
+      - name: label-controller
+        image: aborilov/node-label-controller
